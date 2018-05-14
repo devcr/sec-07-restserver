@@ -107,8 +107,8 @@ app.delete('/usuario/:id', [verificaToken, verificaAdminRole], (req, res) => {
     estado: false
   }
 
-  Usuario.findByIdAndUpdate(id, newEstado, { new: true, runValidators: true }, (err, usuarioBorrado) =>{
-  //Usuario.findByIdAndRemove(id, (err, usuarioBorrado) =>{
+  //Usuario.findByIdAndUpdate(id, newEstado, { new: true, runValidators: true }, (err, usuarioBorrado) =>{
+  Usuario.findByIdAndRemove(id, (err, usuarioBorrado) =>{
 
     if( err){
       return res.status(400).json({
@@ -128,7 +128,7 @@ app.delete('/usuario/:id', [verificaToken, verificaAdminRole], (req, res) => {
 
     res.json({
       ok: true,
-      msg:'Usuario borrado logicamente',
+      msg:'Usuario borrado fisicamente!!',
       usuario: usuarioBorrado
     });
 

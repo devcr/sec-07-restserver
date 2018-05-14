@@ -16,7 +16,7 @@ if(process.env.NODE_ENV === 'env'){
 
 // amaro url para apiuntar directo a prod (solo para probar)
 //urlDB = 'mongodb://dev:admindb76@ds117590.mlab.com:17590/cafe';
-//console.log(`urlDB--> ${urlDB}`);
+console.log(`urlDB--> ${urlDB}`);
 process.env.URLDB = urlDB;
 
 // Caducidad jsonwebtoken
